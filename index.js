@@ -3,16 +3,15 @@ const axios = require('axios');
 const dotenv = require('dotenv')
 
 dotenv.config();
-let state = {
-    standUpResponses: {}
-}
-state.standUpResponses[user] = []
-
 let questions = ['Im here sir.  Type anything to start the standup.','what did you do yesterday?', 'what did you do today?', 'are you blocked?']
 
 let channel = ''
 let token = process.env.TOKEN
 let user = process.env.STANDUP_USER
+let state = {
+    standUpResponses: {}
+}
+state.standUpResponses[user] = []
 console.log('user =>', user)
 const bot = new SlackBot({
     token: token,
