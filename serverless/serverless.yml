@@ -1,0 +1,23 @@
+service: my-slackbot
+
+package:
+  excludeDevDependencies: false
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  iamRoleStatements:
+  - Effect: "Allow"
+    Action:
+    - "dynamodb:*"
+    Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/*"
+
+functions:
+  saveUserStandupResponse:
+    handler: create.create
+    events:
+      - http:
+          path: create
+          method: post
+          cors: true
