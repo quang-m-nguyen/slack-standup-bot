@@ -1,8 +1,4 @@
 service: my-slackbot
-
-package:
-  excludeDevDependencies: false
-
 provider:
   name: aws
   runtime: nodejs8.10
