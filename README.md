@@ -1,2 +1,2 @@
 # slack-standup-bot
-experimental slackbot.  not ready for use
+experimental standup slackbot.  not ready for use
