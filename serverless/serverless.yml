@@ -11,9 +11,9 @@ provider:
 
 functions:
   saveUserStandupResponse:
-    handler: create.create
+    handler: saverecord.saveUserStandupResponse
     events:
       - http:
-          path: create
+          path: saveUserStandupResponse
           method: post
           cors: true
